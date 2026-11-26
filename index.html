@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klipz · ผู้ช่วยตัดต่อและโพสต์คลิปขายของ Shopee Affiliate</title>
+<meta name="description" content="Klipz ตัดต่อคลิป ใส่ข้อความปก ซับไทย แปลงลิงก์ Shopee Affiliate แล้วโพสต์ Facebook Reels, TikTok, Instagram ให้อัตโนมัติ ทดลองฟรี 4 วัน">
+<meta property="og:title" content="Klipz · ผู้ช่วยตัดต่อและโพสต์คลิปขายของ">
+<meta property="og:description" content="ถ่ายคลิปเดียว Klipz ตัด แปลงลิงก์ แล้วโพสต์ให้ครบ Facebook · TikTok · Instagram">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/Kanit-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  @font-face{font-family:Kanit;src:url(fonts/Kanit-Bold.ttf) format("truetype");font-weight:500 800;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans Thai";src:url(fonts/IBMPlexSansThai-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans Thai";src:url(fonts/IBMPlexSansThai-SemiBold.ttf) format("truetype");font-weight:500 700;font-display:swap}
+  :root{
+    --bg:#000; --surface:#141414; --surface-2:#1c1c1c; --line:#2a2a2a;
+    --ink:#f6f3ef; --ink-2:#b9b3ac; --ink-3:#8a847e;
+    --o1:#ffa133; --o2:#f2601c; --o3:#c9361b;
+    --grad:linear-gradient(135deg,var(--o1),var(--o2) 55%,var(--o3));
+    --r-lg:22px; --r-md:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 "IBM Plex Sans Thai",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Kanit,"IBM Plex Sans Thai",sans-serif;line-height:1.2;margin:0;font-weight:600;letter-spacing:-.01em}
+  a{color:inherit}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  :focus-visible{outline:3px solid var(--o1);outline-offset:3px;border-radius:8px}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);border-bottom:1px solid #111}
+  .nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 24px Kanit,sans-serif;letter-spacing:-.02em}
+  .logo img{width:38px;height:38px}
+  .logo span em{font-style:normal;color:var(--o2)}
+  .nav nav{display:flex;gap:24px;margin-left:auto}
+  .nav nav a{text-decoration:none;color:var(--ink-2);font-size:15.5px}
+  .nav nav a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font:600 16px "IBM Plex Sans Thai",sans-serif;
+       padding:13px 22px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease}
+  .btn-main{background:var(--grad);color:#fff;box-shadow:0 8px 28px rgba(242,96,28,.35)}
+  .btn-main:hover{transform:translateY(-1px);box-shadow:0 12px 34px rgba(242,96,28,.45)}
+  .btn-ghost{border-color:#3a3a3a;color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink-3)}
+  .nav .btn{padding:9px 18px;font-size:15px}
+
+  /* hero */
+  .hero{padding:72px 0 40px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-30% -20% auto auto;width:780px;height:780px;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(242,96,28,.28),rgba(242,96,28,0));pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;position:relative}
+  .hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:700}
+  .hero h1 .cut{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{color:var(--ink-2);font-size:19px;margin:22px 0 30px;max-width:33em}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .trial{margin-top:16px;color:var(--ink-3);font-size:14.5px}
+  .shot{border-radius:16px;overflow:hidden;border:1px solid #262626;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 6px #0d0d0d}
+  .shot-bar{height:30px;background:#111;display:flex;align-items:center;gap:7px;padding:0 12px}
+  .shot-bar i{width:10px;height:10px;border-radius:50%;background:#333}
+
+  /* flow: the one memorable element */
+  .flow{margin:64px 0 0;display:grid;grid-template-columns:1.1fr auto 2fr;gap:22px;align-items:center;
+        background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+  .clip{display:flex;gap:16px;align-items:center}
+  .clip .phone{width:72px;height:124px;border-radius:14px;background:linear-gradient(160deg,#2b2b2b,#151515);border:2px solid #333;position:relative;flex:none}
+  .clip .phone::after{content:"";position:absolute;left:50%;top:50%;translate:-40% -50%;border-left:18px solid var(--o2);border-top:11px solid transparent;border-bottom:11px solid transparent}
+  .clip b{font:600 19px Kanit,sans-serif;display:block}
+  .clip small{color:var(--ink-3);font-size:14px}
+  .arrow{width:64px;height:2px;background:var(--grad);position:relative}
+  .arrow::after{content:"";position:absolute;right:-2px;top:-5px;border-left:10px solid var(--o3);border-top:6px solid transparent;border-bottom:6px solid transparent}
+  .outs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .out{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px}
+  .out b{display:block;font:600 17px Kanit,sans-serif}
+  .out span{color:var(--ink-3);font-size:13.5px;line-height:1.5;display:block;margin-top:3px}
+  .out .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:7px}
+
+  section{padding:96px 0 0}
+  .head{max-width:640px;margin-bottom:40px}
+  .head h2{font-size:clamp(30px,3.6vw,44px)}
+  .head p{color:var(--ink-2);margin:14px 0 0}
+
+  /* steps (a real sequence, so numbered) */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;counter-increment:s}
+  .step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--grad);color:#fff;font:700 19px Kanit,sans-serif;margin-bottom:18px}
+  .step h3{font-size:21px}
+  .step p{color:var(--ink-2);margin:8px 0 0;font-size:16px}
+
+  /* features */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:30px 0}
+  .feat + .feat{border-top:1px solid #161616}
+  .feat.rev .feat-txt{order:2}
+  .feat h3{font-size:clamp(25px,2.6vw,32px)}
+  .feat p{color:var(--ink-2);margin:12px 0 18px}
+  .feat ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .feat li{padding-left:28px;position:relative;color:var(--ink)}
+  .feat li::before{content:"";position:absolute;left:4px;top:.62em;width:12px;height:12px;border-radius:4px;background:var(--grad)}
+  .pro{display:inline-block;font:700 12px Kanit,sans-serif;letter-spacing:.04em;padding:3px 9px;border-radius:7px;background:var(--grad);color:#fff;vertical-align:middle;margin-left:8px}
+
+  /* pricing */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column}
+  .plan.best{border:1.5px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,var(--grad) border-box;position:relative}
+  .plan.best::before{content:"คุ้มที่สุด";position:absolute;top:-13px;left:24px;background:var(--grad);color:#fff;font:600 13px "IBM Plex Sans Thai",sans-serif;padding:3px 12px;border-radius:999px}
+  .plan h3{font-size:22px}
+  .plan .who{color:var(--ink-3);font-size:14.5px;margin:4px 0 18px}
+  .price{font:700 46px Kanit,sans-serif;line-height:1}
+  .price small{font:500 16px "IBM Plex Sans Thai",sans-serif;color:var(--ink-2);margin-left:4px}
+  .alt{color:var(--ink-2);font-size:15px;margin:10px 0 0}
+  .early{margin:14px 0 0;background:rgba(255,161,51,.1);color:#ffc27a;border-radius:10px;padding:8px 12px;font-size:14.5px}
+  .plan ul{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:9px;font-size:15.5px}
+  .plan li{padding-left:24px;position:relative}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--o1);font-weight:700}
+  .plan li.no{color:var(--ink-3)}
+  .plan li.no::before{content:"–";color:var(--ink-3)}
+  .plan .btn{margin-top:auto}
+  .note{color:var(--ink-3);font-size:14.5px;margin-top:18px}
+
+  /* specs + faq */
+  .two{display:grid;grid-template-columns:1fr 1.4fr;gap:56px}
+  .need{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+  .need h3{font-size:21px;margin-bottom:12px}
+  .need ul{margin:0;padding-left:20px;color:var(--ink-2);display:grid;gap:6px}
+  details{border-bottom:1px solid #1f1f1f;padding:18px 0}
+  details:first-child{border-top:1px solid #1f1f1f}
+  summary{cursor:pointer;font:600 18px Kanit,sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--o1);font-size:24px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-2);margin:10px 0 0}
+
+  .final{margin:110px 0 0;text-align:center;padding:64px 24px;border-radius:28px;background:radial-gradient(120% 140% at 50% 0%,rgba(242,96,28,.35),rgba(0,0,0,0) 60%),var(--surface);border:1px solid var(--line)}
+  .final img{width:84px;margin:0 auto 18px}
+  .final h2{font-size:clamp(30px,4vw,48px)}
+  .final p{color:var(--ink-2);margin:14px auto 28px;max-width:34em}
+  footer{padding:48px 0 60px;color:var(--ink-3);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #161616;padding-top:24px}
+
+  @media (max-width:960px){
+    .hero-grid,.feat,.two{grid-template-columns:1fr;gap:34px}
+    .feat.rev .feat-txt{order:0}
+    .flow{grid-template-columns:1fr}
+    .arrow{width:2px;height:34px;margin-left:34px}
+    .arrow::after{right:auto;left:-5px;top:auto;bottom:-2px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:10px solid var(--o3);border-bottom:0}
+    .steps,.plans{grid-template-columns:1fr}
+    .nav nav{display:none}
+    .nav .btn{margin-left:auto}
+  }
+  @media (max-width:560px){ .outs{grid-template-columns:1fr} body{font-size:16px} .hero{padding-top:44px} }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Klipz หน้าแรก"><img src="img/klipz-mark.png" alt=""><span>klip<em>z</em></span></a>
+    <nav aria-label="เมนู">
+      <a href="#how">ใช้งานยังไง</a>
+      <a href="#features">ทำอะไรได้</a>
+      <a href="#pricing">ราคา</a>
+      <a href="#faq">คำถาม</a>
+    </nav>
+    <a class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-top:72px">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>ถ่ายคลิปเดียว<br><span class="cut">Klipz</span> ตัด แปลงลิงก์<br>แล้วโพสต์ให้ครบ</h1>
+          <p class="lead">ผู้ช่วยตัดต่อสำหรับคนทำ Shopee Affiliate ใส่ข้อความปกและซับไทย ผูกลิงก์สินค้าให้ตรงคลิป แล้วโพสต์ลง Facebook Reels, TikTok และ Instagram ตามเวลาที่ตั้งไว้</p>
+          <div class="ctas">
+            <a class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทักแชทขอทดลองฟรี</a>
+            <a class="btn btn-ghost" href="#pricing">ดูราคา</a>
+          </div>
+          <p class="trial">ทดลองครบทุกเมนูพื้นฐาน 4 วัน ไม่ต้องผูกบัตร · ใช้บน Windows</p>
+        </div>
+        <div class="shot" aria-label="หน้าจอแอป Klipz">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="img/app-home.jpg" alt="หน้าภาพรวมของแอป Klipz: จำนวนคลิป ลิงก์ที่เลือกแล้ว และโพสต์วันนี้" width="1920" height="1200">
+        </div>
+      </div>
+
+      <div class="flow" role="img" aria-label="คลิปเดียวออกไป 3 ช่องทาง พร้อมลิงก์สินค้าของคุณ">
+        <div class="clip"><div class="phone"></div><div><b>คลิปจากมือถือ 1 คลิป</b><small>โยนเข้าโฟลเดอร์ หรือสแกน QR ส่งจากมือถือ</small></div></div>
+        <div class="arrow"></div>
+        <div class="outs">
+          <div class="out"><b><span class="dot" style="background:#1877f2"></span>Facebook Reels</b><span>ลิงก์ Shopee ของคุณในแคปชัน พร้อม Sub ID</span></div>
+          <div class="out"><b><span class="dot" style="background:#25f4ee"></span>TikTok</b><span>ปักตะกร้าสินค้าที่ตรงกับคลิปให้เอง</span></div>
+          <div class="out"><b><span class="dot" style="background:#e1306c"></span>Instagram</b><span>โพสต์รีลพร้อมแคปชันและลิงก์</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="head"><h2>ใช้งาน 3 ขั้น จบในคลิกเดียวต่อวัน</h2><p>ตั้งค่าครั้งแรกครั้งเดียว หลังจากนั้นแค่ถ่ายคลิปแล้วใส่เข้าโฟลเดอร์</p></div>
+      <div class="steps">
+        <div class="step"><h3>ใส่คลิปเข้าโฟลเดอร์</h3><p>ลากไฟล์จากคอม หรือสแกน QR ส่งคลิปจากมือถือเข้าโฟลเดอร์ Klipz ได้ทันที</p></div>
+        <div class="step"><h3>เลือกสินค้า ตัดต่อ</h3><p>ตัดหัวท้าย ใส่ข้อความปก เลือกสีและฟอนต์ ทำซับไทยอัตโนมัติ แล้วผูกสินค้าจากรายการของคุณ</p></div>
+        <div class="step"><h3>ปล่อยให้บอทโพสต์</h3><p>Klipz แปลงลิงก์ Affiliate ใส่ Sub ID แล้วโพสต์ตามตารางเวลา คลิปที่โพสต์แล้วย้ายเข้าโฟลเดอร์ให้เอง</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="head"><h2>ทุกอย่างที่คนทำคลิปป้ายยาต้องทำซ้ำทุกวัน</h2><p>รวมไว้ในแอปเดียว ข้อมูลอยู่ในเครื่องของคุณ</p></div>
+
+      <div class="feat">
+        <div class="feat-txt">
+          <h3>ตัดต่อ ใส่ปก ใส่ซับ ในแอปเดียว</h3>
+          <p>ไม่ต้องเปิดโปรแกรมตัดต่อแยก แก้คลิปได้ก่อนโพสต์</p>
+          <ul>
+            <li>ข้อความหน้าปก เปลี่ยนสี ฟอนต์ไทย และพื้นหลังตัวอักษร</li>
+            <li>ซับไทยอัตโนมัติจากเสียงพูด หรือพิมพ์เองแล้วให้แอปจัดจังหวะ</li>
+            <li>ตัดหัวท้าย หลายช่วง และเก็บต้นฉบับไว้เสมอ</li>
+            <li>ฟอนต์ไทย 7 แบบติดมากับแอป ใช้ได้แม้ไม่มีเน็ต</li>
+          </ul>
+        </div>
+        <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="img/app-products.jpg" alt="หน้ารายการสินค้าในแอป Klipz" loading="lazy" width="1920" height="1200"></div>
+      </div>
+
+      <div class="feat rev">
+        <div class="feat-txt">
+          <h3>ลิงก์ตรงคลิป โพสต์ครบทุกช่องทาง</h3>
+          <p>แต่ละคลิปผูกกับสินค้าของมันเอง ยอดคลิกจึงนับถูกตัว</p>
+          <ul>
+            <li>แปลงลิงก์ Shopee Affiliate พร้อม Sub ID ตามรหัสคลิป</li>
+            <li>โพสต์ Facebook Reels, TikTok, Instagram ตามเวลาที่ตั้ง</li>
+            <li>TikTok ค้นและปักตะกร้าสินค้าที่ตรงกับคลิปให้เอง</li>
+            <li>ดึงรายการสินค้าจาก Google Sheet ของคุณได้</li>
+          </ul>
+        </div>
+        <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="img/app-accounts.jpg" alt="หน้าบัญชีและช่องทางโพสต์ในแอป Klipz" loading="lazy" width="1920" height="1200"></div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-txt">
+          <h3>สร้างวิดีโอรีวิวด้วย AI <span class="pro">PRO</span></h3>
+          <p>ไม่มีเวลาถ่ายเอง ให้ Meta AI ทำคลิปคนถือสินค้ารีวิวพูดไทยจากรูปในลิงก์ Shopee</p>
+          <ul>
+            <li>เลือกเพศ อายุ แนวรีวิว และเขียนคำสั่ง AI เองได้</li>
+            <li>ขึ้นข้อดี ข้อเสีย สรุป บนจอ พร้อมรูปสินค้าจริงมุมจอ</li>
+            <li>สร้างทีละ 30 คลิป หรือให้ทำครบเป้าทุกวันอัตโนมัติ</li>
+            <li>ใช้บัญชี Meta AI ของคุณเอง (สมัครฟรีด้วย Facebook)</li>
+          </ul>
+        </div>
+        <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="img/app-ai.jpg" alt="หน้าสร้างวิดีโอ AI ในแอป Klipz" loading="lazy" width="1920" height="1200"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="head"><h2>ราคาเดียว ใช้ได้ไม่จำกัดคลิป</h2><p>จ่ายผ่านพร้อมเพย์ในแอป ส่งสลิปแล้วได้รหัสเปิดใช้งานทันทีที่แอดมินตรวจ</p></div>
+      <div class="plans">
+        <div class="plan">
+          <h3>เริ่มต้น</h3>
+          <div class="who">ถ่ายคลิปเอง ให้ Klipz ตัดและโพสต์</div>
+          <div class="price">149<small>บาท / เดือน</small></div>
+          <p class="alt">หรือ 399 บาท / 3 เดือน</p>
+          <p class="early">ลูกค้ากลุ่มแรก 99 บาท / เดือน ล็อกราคานี้ตลอดตอนต่ออายุ</p>
+          <ul>
+            <li>ตัดต่อ ใส่ข้อความปก และซับไทย</li>
+            <li>แปลงลิงก์ Affiliate + Sub ID</li>
+            <li>โพสต์ Facebook · TikTok · Instagram</li>
+            <li>ตารางโพสต์ และรับคลิปจากมือถือ</li>
+            <li class="no">สร้างวิดีโอ AI</li>
+          </ul>
+          <a class="btn btn-ghost" href="https://m.me/105182238702295" target="_blank" rel="noopener">เริ่มทดลองฟรี</a>
+        </div>
+        <div class="plan best">
+          <h3>Pro</h3>
+          <div class="who">ทุกอย่างในแพ็กเริ่มต้น + วิดีโอ AI</div>
+          <div class="price">249<small>บาท / เดือน</small></div>
+          <p class="alt">หรือ 649 บาท / 3 เดือน</p>
+          <p class="early">ลูกค้ากลุ่มแรก 149 บาท / เดือน</p>
+          <ul>
+            <li>ทุกฟีเจอร์ของแพ็กเริ่มต้น</li>
+            <li>สร้างวิดีโอรีวิวด้วย Meta AI</li>
+            <li>เขียนคำสั่ง AI เอง เลือกผู้รีวิว</li>
+            <li>สร้างครบเป้ารายวันอัตโนมัติ</li>
+            <li>อัปเดตฟีเจอร์ใหม่ก่อนใคร</li>
+          </ul>
+          <a class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">สมัคร Pro</a>
+        </div>
+        <div class="plan">
+          <h3>Pro ตลอดไป</h3>
+          <div class="who">จ่ายครั้งเดียว ใช้ได้ตลอด</div>
+          <div class="price">1,290<small>บาท</small></div>
+          <p class="alt">ถูกกว่าโปรแกรมตัดต่อแบบซื้อขาดทั่วไปที่ขาย 1,490 บาท</p>
+          <ul>
+            <li>ทุกฟีเจอร์ของ Pro</li>
+            <li>ไม่มีรายเดือน ไม่ต้องต่ออายุ</li>
+            <li>อัปเดตฟรี</li>
+            <li>1 บัญชี ใช้ได้ 1 เครื่อง</li>
+          </ul>
+          <a class="btn btn-ghost" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทักแชทซื้อ</a>
+        </div>
+      </div>
+      <p class="note">ราคาอาจเปลี่ยนแปลง ดูราคาล่าสุดได้ในหน้าชำระเงินของแอป · แพ็ก Pro ใช้บัญชี Meta AI ของคุณเอง ซึ่งสมัครฟรี</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap two">
+      <div>
+        <div class="head" style="margin-bottom:24px"><h2>คำถามที่พบบ่อย</h2></div>
+        <div class="need">
+          <h3>สิ่งที่ต้องมี</h3>
+          <ul>
+            <li>คอม Windows 10 หรือ 11</li>
+            <li>อินเทอร์เน็ต</li>
+            <li>บัญชี Shopee Affiliate</li>
+            <li>เพจ Facebook และ/หรือ บัญชี TikTok, Instagram</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <details open><summary>ทดลองฟรีได้ไหม</summary><p>ได้ 4 วัน ใช้ได้ครบทุกเมนูของแพ็กเริ่มต้น (ตัดต่อ แปลงลิงก์ โพสต์) ส่วนสร้างวิดีโอ AI ต้องอัปเกรดเป็น Pro</p></details>
+        <details><summary>ใช้บน Mac หรือมือถือได้ไหม</summary><p>ตัวแอปใช้บน Windows เท่านั้น แต่ส่งคลิปจากมือถือเข้าแอปได้ด้วยการสแกน QR</p></details>
+        <details><summary>จ่ายเงินยังไง</summary><p>กดซื้อในแอป สแกนพร้อมเพย์ ส่งสลิป เมื่อแอดมินตรวจแล้วรหัสยืนยัน 6 หลักจะขึ้นในแอปเอง กรอกแล้วใช้งานต่อได้ทันที</p></details>
+        <details><summary>บัญชีโซเชียลจะโดนแบนไหม</summary><p>Klipz โพสต์ผ่านบัญชีของคุณเหมือนคนกดเอง แต่คุณต้องใช้งานให้เป็นไปตามกฎของ Shopee, Facebook, TikTok และ Instagram เช่น ไม่โพสต์ถี่เกินไป และใช้คลิปที่คุณมีสิทธิ์ใช้</p></details>
+        <details><summary>ใช้ได้กี่เครื่อง</summary><p>1 บัญชีใช้ได้ 1 เครื่อง ย้ายเครื่องได้โดยเข้าสู่ระบบที่เครื่องใหม่</p></details>
+        <details><summary>อัปเดตแอปยังไง</summary><p>เมื่อมีเวอร์ชันใหม่ ปุ่มอัปเดตจะขึ้นในแอป กดครั้งเดียว ข้อมูลสินค้า การตั้งค่า และการล็อกอินโซเชียลยังอยู่ครบ</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="final">
+      <img src="img/klipz-mark.png" alt="">
+      <h2>เลิกนั่งตัดคลิปทีละอัน</h2>
+      <p>ทักแชทมาขอลิงก์ดาวน์โหลด แล้วลองใช้ฟรี 4 วัน ตั้งค่าครั้งแรกไม่ถึง 10 นาที มีคนช่วยตั้งให้ถ้าติดตรงไหน</p>
+      <a class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทักแชท Messenger</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Klipz · ผู้ช่วยตัดต่อและโพสต์คลิปขายของ</span>
+    <span>Klipz ไม่ได้เป็นส่วนหนึ่งของ Shopee, Meta หรือ TikTok</span>
+  </div>
+</footer>
+</body>
+</html>
