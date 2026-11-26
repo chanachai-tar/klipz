@@ -166,7 +166,7 @@
       <a href="#pricing">ราคา</a>
       <a href="#faq">คำถาม</a>
     </nav>
-    <a class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
+    <a data-trial class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
   </div>
 </header>
 
@@ -178,7 +178,7 @@
           <h1>ถ่ายคลิปเดียว<br><span class="cut">Klipz</span> ตัด แปลงลิงก์<br>แล้วโพสต์ให้ครบ</h1>
           <p class="lead">ผู้ช่วยตัดต่อสำหรับคนทำ Shopee Affiliate ใส่ข้อความปกและซับไทย ผูกลิงก์สินค้าให้ตรงคลิป แล้วโพสต์ลง Facebook Reels และ TikTok ตามเวลาที่ตั้งไว้</p>
           <div class="ctas">
-            <a class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทักแชทขอทดลองฟรี</a>
+            <a data-trial class="btn btn-main" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
             <a class="btn btn-ghost" href="#pricing">ดูราคา</a>
           </div>
           <p class="trial">ทดลองครบทุกเมนูพื้นฐาน 4 วัน ไม่ต้องผูกบัตร · ใช้บน Windows</p>
@@ -266,9 +266,9 @@
         <div class="plan">
           <h3>เริ่มต้น</h3>
           <div class="who">ถ่ายคลิปเอง ให้ Klipz ตัดและโพสต์</div>
-          <div class="price">149<small>บาท / เดือน</small></div>
-          <p class="alt">หรือ 399 บาท / 3 เดือน</p>
-          <p class="early">ลูกค้ากลุ่มแรก 99 บาท / เดือน ล็อกราคานี้ตลอดตอนต่ออายุ</p>
+          <div class="price">199<small>บาท / เดือน</small></div>
+          <p class="alt">หรือ 499 บาท / 3 เดือน</p>
+          <p class="early">ลูกค้า 10 คนแรก 149 บาท / เดือน ล็อกราคานี้ตลอดตอนต่ออายุ</p>
           <ul>
             <li>ตัดต่อ ใส่ข้อความปก และซับไทย</li>
             <li>แปลงลิงก์ Affiliate + Sub ID</li>
@@ -276,14 +276,14 @@
             <li>ตารางโพสต์ และรับคลิปจากมือถือ</li>
             <li class="no">สร้างวิดีโอ AI</li>
           </ul>
-          <a class="btn btn-ghost" href="https://m.me/105182238702295" target="_blank" rel="noopener">เริ่มทดลองฟรี</a>
+          <a data-trial class="btn btn-ghost" href="https://m.me/105182238702295" target="_blank" rel="noopener">เริ่มทดลองฟรี</a>
         </div>
         <div class="plan best">
           <h3>Pro</h3>
           <div class="who">ทุกอย่างในแพ็กเริ่มต้น + วิดีโอ AI</div>
-          <div class="price">249<small>บาท / เดือน</small></div>
-          <p class="alt">หรือ 649 บาท / 3 เดือน</p>
-          <p class="early">ลูกค้ากลุ่มแรก 149 บาท / เดือน</p>
+          <div class="price">399<small>บาท / เดือน</small></div>
+          <p class="alt">หรือ 990 บาท / 3 เดือน</p>
+          <p class="early">ลูกค้า 10 คนแรก 249 บาท / เดือน</p>
           <ul>
             <li>ทุกฟีเจอร์ของแพ็กเริ่มต้น</li>
             <li>สร้างวิดีโอรีวิวด้วย Meta AI</li>
@@ -296,8 +296,8 @@
         <div class="plan">
           <h3>Pro ตลอดไป</h3>
           <div class="who">จ่ายครั้งเดียว ใช้ได้ตลอด</div>
-          <div class="price">1,290<small>บาท</small></div>
-          <p class="alt">ถูกกว่าโปรแกรมตัดต่อแบบซื้อขาดทั่วไปที่ขาย 1,490 บาท</p>
+          <div class="price">2,990<small>บาท</small></div>
+          <p class="alt">จำกัด 20 สิทธิ์ เท่ากับจ่าย Pro ไม่ถึง 8 เดือน</p>
           <ul>
             <li>ทุกฟีเจอร์ของ Pro</li>
             <li>ไม่มีรายเดือน ไม่ต้องต่ออายุ</li>
@@ -352,5 +352,10 @@
     <span>Klipz ไม่ได้เป็นส่วนหนึ่งของ Shopee, Meta หรือ TikTok</span>
   </div>
 </footer>
+<script>
+// ลิงก์หน้าลงทะเบียนทดลองฟรี (Google Apps Script ?page=trial) ว่าง = ปุ่มทดลองฟรีเปิดแชท Messenger แทน
+var TRIAL_URL = '';
+if (TRIAL_URL) document.querySelectorAll('[data-trial]').forEach(function (a) { a.href = TRIAL_URL; });
+</script>
 </body>
 </html>
