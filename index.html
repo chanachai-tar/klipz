@@ -47,6 +47,11 @@
   .btn-main{background:var(--grad);color:#fff;box-shadow:0 8px 28px rgba(242,96,28,.35)}
   .btn-main:hover{transform:translateY(-1px);box-shadow:0 12px 34px rgba(242,96,28,.45)}
   .btn-ghost{border-color:#3a3a3a;color:var(--ink)}
+  .proof{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+  .proof > div{display:flex;flex-direction:column}
+  .proof b{font-size:28px;line-height:1.1;font-weight:700;color:var(--ink)}
+  .proof .lbl{font-size:14px;color:var(--ink-3)}
+  .proof .st{color:#f5a623;letter-spacing:1px}
   .btn-ghost:hover{border-color:var(--ink-3)}
   .nav .btn{padding:9px 18px;font-size:15px}
 
@@ -182,6 +187,10 @@
             <a class="btn btn-ghost" href="#pricing">ดูราคา</a>
           </div>
           <p class="trial">ทดลองครบทุกเมนูพื้นฐาน 4 วัน ไม่ต้องผูกบัตร · ใช้บน Windows</p>
+          <div class="proof" id="proof" hidden>
+            <div id="pfUsers" hidden><b></b><span class="lbl">คนลงทะเบียนใช้งาน</span></div>
+            <div id="pfRate" hidden><b></b><span class="lbl"></span></div>
+          </div>
         </div>
         <div class="shot" aria-label="หน้าจอแอป Klipz">
           <div class="shot-bar"><i></i><i></i><i></i></div>
@@ -359,6 +368,19 @@
 // ลิงก์หน้าลงทะเบียนทดลองฟรี (Google Apps Script ?page=trial) ว่าง = ปุ่มทดลองฟรีเปิดแชท Messenger แทน
 var TRIAL_URL = 'https://script.google.com/macros/s/AKfycbwAdvV_BWsFsO0omVzMN-SzjuX3sIXP-8G91bjP_d5FaHO-BTi6MIdBkOa5AyUocZX3/exec?page=trial';
 if (TRIAL_URL) document.querySelectorAll('[data-trial]').forEach(function (a) { a.href = TRIAL_URL; });
+// ตัวเลขจริงจากระบบ (ยอดสะสม) · คะแนนโชว์เมื่อมีอย่างน้อย 3 รีวิว
+if (TRIAL_URL) fetch(TRIAL_URL.replace(/\?.*$/, '') + '?action=stats').then(function (r) { return r.json(); }).then(function (d) {
+  if (!d || !d.ok) return;
+  var show = false;
+  if (d.users > 0) { var u = document.getElementById('pfUsers'); u.querySelector('b').textContent = d.users.toLocaleString('th-TH'); u.hidden = false; show = true; }
+  if (d.reviews >= 3 && d.rating > 0) {
+    var r = document.getElementById('pfRate'), full = Math.round(d.rating);
+    r.querySelector('b').innerHTML = d.rating.toFixed(1) + ' <span class="st">' + '★★★★★'.slice(0, full) + '☆☆☆☆☆'.slice(0, 5 - full) + '</span>';
+    r.querySelector('.lbl').textContent = 'ความพึงพอใจจาก ' + d.reviews.toLocaleString('th-TH') + ' รีวิวในแอป';
+    r.hidden = false; show = true;
+  }
+  document.getElementById('proof').hidden = !show;
+}).catch(function () {});
 </script>
 </body>
 </html>
