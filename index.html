@@ -171,7 +171,7 @@
       <a href="#pricing">ราคา</a>
       <a href="#faq">คำถาม</a>
     </nav>
-    <a data-trial class="btn btn-main" href="https://script.google.com/macros/s/AKfycbw77eMnKEmp_ogVZ-29_hpN09WZYEalqp1s8qUEyjcmGgcTtGKjTH4LQro-Q_OR3NLE/exec?page=trial" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
+    <a data-trial class="btn btn-main" href="register.html">ทดลองฟรี 4 วัน</a>
   </div>
 </header>
 
@@ -183,7 +183,7 @@
           <h1>ถ่ายคลิปเดียว<br><span class="cut">Klipz</span> ตัด แปลงลิงก์<br>แล้วโพสต์ให้ครบ</h1>
           <p class="lead">ผู้ช่วยตัดต่อสำหรับคนทำ Shopee Affiliate ใส่ข้อความปกและซับไทย ผูกลิงก์สินค้าให้ตรงคลิป แล้วโพสต์ลง Facebook Reels และ TikTok ตามเวลาที่ตั้งไว้</p>
           <div class="ctas">
-            <a data-trial class="btn btn-main" href="https://script.google.com/macros/s/AKfycbw77eMnKEmp_ogVZ-29_hpN09WZYEalqp1s8qUEyjcmGgcTtGKjTH4LQro-Q_OR3NLE/exec?page=trial" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
+            <a data-trial class="btn btn-main" href="register.html">ทดลองฟรี 4 วัน</a>
             <a class="btn btn-ghost" href="#pricing">ดูราคา</a>
           </div>
           <p class="trial">ทดลองครบทุกเมนูพื้นฐาน 4 วัน ใช้แค่อีเมล ไม่ต้องผูกบัตร · ใช้บน Windows</p>
@@ -285,7 +285,7 @@
             <li>ตารางโพสต์ และรับคลิปจากมือถือ</li>
             <li class="no">สร้างวิดีโอ AI</li>
           </ul>
-          <a data-trial class="btn btn-ghost" href="https://script.google.com/macros/s/AKfycbzkVAijiKtdzZMwFI9l2FwmkjxtfjYeETC_tag1-E52Al4gk7ILvAhG2Imx3a3KfQ8z/exec?page=trial" target="_blank" rel="noopener">เริ่มทดลองฟรี</a>
+          <a data-trial class="btn btn-ghost" href="register.html">เริ่มทดลองฟรี</a>
         </div>
         <div class="plan best">
           <h3>Pro</h3>
@@ -352,7 +352,7 @@
       <h2>เลิกนั่งตัดคลิปทีละอัน</h2>
       <p>ใส่อีเมล รับรหัสโหลดทางอีเมล แล้วโหลดตัวติดตั้งไฟล์เดียวไปลองใช้ฟรี 4 วัน ติดตั้งให้เองครบในคลิกเดียว ติดตรงไหนทักแชทมาได้ มีคนช่วยตั้งให้</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a data-trial class="btn btn-main" href="https://script.google.com/macros/s/AKfycbzkVAijiKtdzZMwFI9l2FwmkjxtfjYeETC_tag1-E52Al4gk7ILvAhG2Imx3a3KfQ8z/exec?page=trial" target="_blank" rel="noopener">ทดลองฟรี 4 วัน</a>
+        <a data-trial class="btn btn-main" href="register.html">ทดลองฟรี 4 วัน</a>
         <a class="btn btn-ghost" href="https://m.me/105182238702295" target="_blank" rel="noopener">ทักแชท Messenger</a>
       </div>
     </div>
@@ -366,9 +366,9 @@
   </div>
 </footer>
 <script>
-// ลิงก์หน้าลงทะเบียนทดลองฟรี (Google Apps Script ?page=trial) ว่าง = ปุ่มทดลองฟรีเปิดแชท Messenger แทน
+// ลิงก์ระบบสมาชิก (Google Apps Script) ใช้ดึงตัวเลขสถิติ · ตัวฟอร์มลงทะเบียนอยู่ที่ register.html
 var TRIAL_URL = 'https://script.google.com/macros/s/AKfycbzkVAijiKtdzZMwFI9l2FwmkjxtfjYeETC_tag1-E52Al4gk7ILvAhG2Imx3a3KfQ8z/exec?page=trial';
-if (TRIAL_URL) document.querySelectorAll('[data-trial]').forEach(function (a) { a.href = TRIAL_URL; });
+// ปุ่มทดลองฟรีทุกปุ่มไปหน้า register.html (ฝังฟอร์มลงทะเบียนไว้ในเว็บนี้)
 // ตัวเลขจริงจากระบบ (ยอดสะสม) · คะแนนโชว์เมื่อมีอย่างน้อย 3 รีวิว
 if (TRIAL_URL) fetch(TRIAL_URL.replace(/\?.*$/, '') + '?action=stats').then(function (r) { return r.json(); }).then(function (d) {
   if (!d || !d.ok) return;
